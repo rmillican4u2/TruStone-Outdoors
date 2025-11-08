@@ -533,20 +533,7 @@
     <p>© 2025 TruStone Outdoors. All rights reserved.</p>
   </footer>
 
-<script>
-  // Detect elements as they scroll into view
-  const faders = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
 
-  faders.forEach(el => observer.observe(el));
-</script>
 
 <script>
   // Detect if the visitor is on a mobile device
@@ -565,25 +552,28 @@
     });
   }
 </script>
-
 <script>
-  // Fade in service icons on scroll
-  const icons = document.querySelectorAll('.service-icon');
-  const iconObserver = new IntersectionObserver(entries => {
+  // 🔥 Unified IntersectionObserver for fade-up and icon animations
+  const elementsToObserve = document.querySelectorAll('.fade-up, .service-icon');
+
+  const sharedObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        iconObserver.unobserve(entry.target);
+        entry.target.classList.toggle('visible', entry.isIntersecting);
       }
     });
   }, { threshold: 0.2 });
 
-  icons.forEach(icon => iconObserver.observe(icon));
+  elementsToObserve.forEach(el => sharedObserver.observe(el));
 </script>
+
+
 
 	
 </body>
 </html>
+
 
 
 
