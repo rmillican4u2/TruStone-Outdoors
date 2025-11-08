@@ -1,8 +1,10 @@
+/* Remove hover effects on touch devices */
 @media (hover: none) {
   .service:hover .service-icon {
     transform: none;
     text-shadow: none;
   }
+}
 
 /* Unique hover glow colors per service */
 .service:nth-child(1):hover .service-icon { 
@@ -35,8 +37,27 @@
   text-shadow: 0 0 12px rgba(255, 152, 0, 0.6);
 }
 
-
+/* Gentle pulse animation for service icons */
+@keyframes iconPulse {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 12px currentColor;
+  }
+  50% {
+    transform: scale(1.15);
+    text-shadow: 0 0 20px currentColor;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 12px currentColor;
+  }
 }
+
+/* Apply pulse only when hovering */
+.service:hover .service-icon {
+  animation: iconPulse 1.2s ease-in-out infinite;
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -544,6 +565,7 @@
 
 </body>
 </html>
+
 
 
 
