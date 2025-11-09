@@ -120,32 +120,6 @@
   }
 }
 
-    /* ✨ Fade-in animation for service icons when section scrolls into view */
-.service {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.8s ease-out forwards;
-}
-
-/* Staggered delay for each icon */
-.service:nth-child(1) { animation-delay: 0.2s; }
-.service:nth-child(2) { animation-delay: 0.4s; }
-.service:nth-child(3) { animation-delay: 0.6s; }
-.service:nth-child(4) { animation-delay: 0.8s; }
-.service:nth-child(5) { animation-delay: 1s; }
-.service:nth-child(6) { animation-delay: 1.2s; }
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 
     .services-cta{text-align:center;margin-top:60px;}
     .services-cta .cta-button{background:#4caf50;color:#fff;padding:15px 35px;font-size:1.1rem;border-radius:6px;text-decoration:none;font-weight:600;}
@@ -365,28 +339,8 @@
   </section>
 
   <footer><p>© 2025 TruStone Outdoors. All rights reserved.</p></footer>
-
- <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const services = document.querySelectorAll(".service");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.animationPlayState = "running";
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    services.forEach(service => {
-      service.style.animationPlayState = "paused";
-      observer.observe(service);
-    });
-  });
-  </script>
-  
 </body>
 </html>
-
 
 
 
