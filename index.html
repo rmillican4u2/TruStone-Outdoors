@@ -72,6 +72,169 @@
     .transformation-text .cta-button{background:#4caf50;color:#fff;padding:12px 25px;border-radius:6px;text-decoration:none;font-weight:600;display:inline-block;margin-top:20px;}
     .transformation-text .cta-button:hover{background:#3e8e41;transform:translateY(-3px);}
 
+/* BEFORE & AFTER SLIDER */
+.transformation-section {
+  background: #fff;
+  padding: 80px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.transformation-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 1100px;
+}
+
+/* Image container */
+.before-after-container {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.before-after-container img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Before image overlayed */
+.before-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.before-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.after-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Slider styling */
+.slider {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  cursor: pointer;
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.4);
+  height: 6px;
+  border-radius: 5px;
+  outline: none;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #4caf50;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* BEFORE & AFTER Labels */
+.before-after-container .label {
+  position: absolute;
+  top: 15px;
+  padding: 5px 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.before-after-container .before-label {
+  left: 15px;
+}
+
+.before-after-container .after-label {
+  right: 15px;
+}
+    
+/* Text block */
+.transformation-text {
+  flex: 1;
+  min-width: 320px;
+  color: #333;
+}
+
+.transformation-text h2 {
+  font-size: 1.9rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.transformation-text p {
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.transformation-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.transformation-text li {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.transformation-text .cta-button {
+  background: #4caf50;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.transformation-text .cta-button:hover {
+  background: #3e8e41;
+  transform: translateY(-3px);
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .transformation-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+    
     /* CONTACT + FOOTER */
     section{text-align:center;padding:60px 10%;}
     footer{background:#111;color:#bbb;padding:40px 10%;text-align:center;}
@@ -138,28 +301,42 @@
     </div>
   </section>
 
-  <!-- BEFORE/AFTER - SINGLE IMAGE -->
-  <section class="transformation-section fade-up">
-    <div class="transformation-container">
-      <div class="before-after-single">
-        <img src="images/sod-transformation.jpg" alt="Lawn transformation">
-        <div class="before-overlay" id="beforeOverlay"></div>
-        <input type="range" min="0" max="100" value="50" class="slider" id="singleImageSlider">
+  <!-- BEFORE & AFTER TRANSFORMATION SECTION -->
+<section class="transformation-section fade-up">
+  <div class="transformation-container">
+    
+    <!-- Left: Before/After Image Slider -->
+    <div class="before-after-container">
+      <div class="before-image">
+        <img src="images/sod-before.jpg" alt="Before lawn">
+      </div>
+      <div class="after-image">
+        <img src="images/sod-after.jpg" alt="After lawn">
       </div>
 
-      <div class="transformation-text">
-        <h2>See the TruStone Difference</h2>
-        <p>From dry patches to lush green perfection — we bring life back to your landscape. Slide to see the transformation.</p>
-        <ul>
-          <li>🌿 Sod installation and lawn renovation</li>
-          <li>🌱 Landscape design and installation</li>
-          <li>💧 Irrigation setup and repair</li>
-          <li>🌳 Tree trimming and removal</li>
-        </ul>
-        <a href="#contact" class="cta-button">Get a Free Estimate »</a>
-      </div>
+<!-- Add these labels -->
+  <span class="label before-label">Before</span>
+  <span class="label after-label">After</span>
+      
+      <input type="range" min="0" max="100" value="50" class="slider" id="beforeAfterSlider">
     </div>
-  </section>
+
+    <!-- Right: Text Content -->
+    <div class="transformation-text">
+      <h2>See the TruStone Difference</h2>
+      <p>From dry patches to lush green perfection — we bring life back to your landscape. Slide to see the transformation.</p>
+      <ul>
+        <li>🌿 Sod installation and lawn renovation</li>
+        <li>🌱 Landscape design and installation</li>
+        <li>💧 Irrigation setup and repair</li>
+        <li>🌳 Tree trimming and removal</li>
+      </ul>
+      <a href="#contact" class="cta-button">Get a Free Estimate »</a>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- CONTACT -->
   <section id="contact">
@@ -176,5 +353,16 @@
       overlay.style.width = `${e.target.value}%`;
     });
   </script>
+
+
+<script>
+  const slider = document.getElementById('beforeAfterSlider');
+  const beforeImage = document.querySelector('.before-image img');
+  slider.addEventListener('input', e => {
+    beforeImage.style.clipPath = `inset(0 ${100 - e.target.value}% 0 0)`;
+  });
+</script>
+  
 </body>
 </html>
+
