@@ -91,45 +91,40 @@
   max-width: 1100px;
 }
 
-/* Image container */
+/* === BEFORE & AFTER IMAGE SLIDER === */
 .before-after-container {
   position: relative;
-  max-width: 500px;
   width: 100%;
+  max-width: 500px;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-.before-after-container img {
+/* Base "After" image (full width) */
+.after-image img {
   width: 100%;
-  display: block;
   height: auto;
+  display: block;
+  object-fit: cover;
 }
 
-/* Before image overlayed */
+/* Top "Before" image (revealed by slider) */
 .before-image {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 50%; /* start half visible */
   height: 100%;
   overflow: hidden;
+  z-index: 2;
+  transition: width 0.25s ease-out;
 }
 
 .before-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
-
-.after-image img {
   display: block;
-  width: 100%;
-  height: auto;
   object-fit: cover;
 }
 
@@ -146,7 +141,9 @@
   height: 6px;
   border-radius: 5px;
   outline: none;
+  z-index: 3;
 }
+
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 20px;
@@ -157,7 +154,7 @@
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
-/* BEFORE & AFTER Labels */
+/* Labels */
 .before-after-container .label {
   position: absolute;
   top: 15px;
@@ -170,32 +167,11 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   pointer-events: none;
-  z-index: 5;
+  z-index: 4;
 }
+.before-after-container .before-label { left: 15px; }
+.before-after-container .after-label { right: 15px; }
 
-.before-after-container .before-label {
-  left: 15px;
-}
-
-.before-after-container .after-label {
-  right: 15px;
-}
-
-/* Fix for collapsed Before/After images */
-.before-after-container,
-.before-image,
-.after-image {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-
-.before-after-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
     
 /* Text block */
 .transformation-text {
@@ -376,6 +352,7 @@
   
 </body>
 </html>
+
 
 
 
