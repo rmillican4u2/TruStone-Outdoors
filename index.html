@@ -119,10 +119,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* prevents stretching */
+  height: auto;             /* keep natural proportion */
+  object-fit: contain;      /* no distortion or stretching */
   display: block;
+  image-rendering: -webkit-optimize-contrast; /* sharpen images on Chrome/Safari */
+  image-rendering: crisp-edges;
+  backface-visibility: hidden; /* prevents blur artifacts */
 }
+
 
 /* Top "Before" image (revealed by slider) */
 .before-image {
@@ -387,6 +391,7 @@
   
 </body>
 </html>
+
 
 
 
