@@ -55,6 +55,7 @@
 
     /* Restored green icon color + hover fade */
    /* 🌿 Multi-colored Service Icons with Smooth Glow Effects */
+/* 🌿 Multi-colored Service Icons with Smooth Glow + Pulse Animation */
 .service i {
   font-size: 2rem;
   margin-bottom: 12px;
@@ -62,7 +63,7 @@
 }
 
 /* Default colors per service type */
-.service:nth-child(1) i { color: #4caf50; } /* Sod – Dark Pine Green */
+.service:nth-child(1) i { color: #2e7d32; } /* Sod – Dark Pine Green */
 .service:nth-child(2) i { color: #81c784; } /* Landscape Design – Soft Green */
 .service:nth-child(3) i { color: #03a9f4; } /* Irrigation – Sky Blue */
 .service:nth-child(4) i { color: #8bc34a; } /* Tree Services – Leafy Green */
@@ -71,34 +72,52 @@
 
 /* Hover effects per icon */
 .service:nth-child(1):hover i {
-  color: #b2ff9e;
+  color: #5cff7d;
   transform: scale(1.15);
-  text-shadow: 0 0 15px rgba(76, 175, 80, 0.6);
+  text-shadow: 0 0 15px rgba(46, 125, 50, 0.6);
+  animation: iconPulse 2s ease-in-out infinite;
 }
 .service:nth-child(2):hover i {
   color: #d2ffd1;
   transform: scale(1.15);
   text-shadow: 0 0 15px rgba(129, 199, 132, 0.6);
+  animation: iconPulse 2s ease-in-out infinite;
 }
 .service:nth-child(3):hover i {
   color: #6ddcff;
   transform: scale(1.15);
   text-shadow: 0 0 18px rgba(3, 169, 244, 0.6);
+  animation: iconPulse 2s ease-in-out infinite;
 }
 .service:nth-child(4):hover i {
   color: #d2ffb3;
   transform: scale(1.15);
   text-shadow: 0 0 15px rgba(139, 195, 74, 0.6);
+  animation: iconPulse 2s ease-in-out infinite;
 }
 .service:nth-child(5):hover i {
-  color: #f4ff9f;
+  color: #a4ffb0;
   transform: scale(1.15);
-  text-shadow: 0 0 15px rgba(205, 220, 57, 0.6);
+  text-shadow: 0 0 15px rgba(102, 187, 106, 0.6);
+  animation: iconPulse 2s ease-in-out infinite;
 }
 .service:nth-child(6):hover i {
   color: #ffd580;
   transform: scale(1.15);
   text-shadow: 0 0 15px rgba(255, 152, 0, 0.6);
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+/* Pulse animation */
+@keyframes iconPulse {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transform: scale(1.15);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+    transform: scale(1.2);
+  }
 }
 
 
@@ -322,6 +341,7 @@
   <footer><p>© 2025 TruStone Outdoors. All rights reserved.</p></footer>
 </body>
 </html>
+
 
 
 
