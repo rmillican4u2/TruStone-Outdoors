@@ -71,4 +71,217 @@
 
     /* === BEFORE & AFTER GALLERY (Side-by-side on desktop, stacked on mobile) === */
     .transformation-section {
+      background:#fff;
+      padding:80px 10%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+    }
 
+    .transformation-container {
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:50px;
+      max-width:1100px;
+    }
+
+    .before-after-gallery {
+      display:flex;
+      gap:20px;
+      flex:1;
+      justify-content:center;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+
+    .before-after-gallery .image-box {
+      position:relative;
+      flex:1 1 45%;
+      max-width:500px;
+      overflow:hidden;
+      border-radius:12px;
+      box-shadow:0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    .before-after-gallery img {
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:contain;
+      opacity:0;
+      animation:fadeInImage 1.2s ease forwards;
+    }
+
+    .before-after-gallery .label {
+      position:absolute;
+      top:15px;
+      left:15px;
+      background:rgba(0,0,0,0.55);
+      color:#fff;
+      padding:6px 14px;
+      border-radius:4px;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+      font-size:0.9rem;
+      opacity:0;
+      animation:fadeIn 1s ease forwards 0.5s;
+    }
+
+    .before-after-gallery .after-label {left:auto;right:15px;}
+
+    @keyframes fadeIn {
+      to {opacity:1;}
+    }
+    @keyframes fadeInImage {
+      to {opacity:1;}
+    }
+
+    /* Text block */
+    .transformation-text {
+      flex:1;
+      min-width:320px;
+      color:#333;
+    }
+    .transformation-text h2 {
+      font-size:1.9rem;
+      color:#2c3e50;
+      margin-bottom:15px;
+    }
+    .transformation-text p {
+      font-size:1.05rem;
+      margin-bottom:20px;
+      line-height:1.6;
+    }
+    .transformation-text ul {list-style:none;padding:0;}
+    .transformation-text li {font-size:1rem;margin-bottom:8px;}
+    .transformation-text .cta-button {
+      background:#4caf50;color:#fff;padding:12px 25px;border-radius:6px;
+      text-decoration:none;font-weight:600;display:inline-block;margin-top:20px;
+      transition:background .3s,transform .3s;
+    }
+    .transformation-text .cta-button:hover {
+      background:#3e8e41;transform:translateY(-3px);
+    }
+
+    /* Stack on mobile */
+    @media (max-width:768px){
+      .before-after-gallery {
+        flex-direction:column;
+        align-items:center;
+      }
+      .before-after-gallery .image-box {
+        max-width:100%;
+      }
+    }
+
+    /* CONTACT + FOOTER */
+    section{text-align:center;padding:60px 10%;}
+    footer{background:#111;color:#bbb;padding:40px 10%;text-align:center;}
+    footer a{color:#4caf50;text-decoration:none;}
+
+    /* MOBILE */
+    @media(max-width:768px){
+      .hero-video-container video{display:none;}
+      .mobile-hero{display:block;}
+      .about-section{flex-direction:column;text-align:center;}
+      .transformation-container{flex-direction:column;text-align:center;}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav>
+    <div class="logo"><strong>TruStone Outdoors</strong></div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero-video-container">
+    <video autoplay muted loop playsinline>
+      <source src="videos/hero-video.mp4" type="video/mp4">
+    </video>
+    <img src="images/mobile-hero.jpg" alt="TruStone Outdoors" class="mobile-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Transform Your Outdoor Space</h1>
+      <p>Professional landscaping, hardscaping, and irrigation services across Texas.</p>
+      <a href="#contact">Get a Free Quote</a>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="about-text">
+      <h2>About TruStone Outdoors</h2>
+      <p>At TruStone Outdoors, we bring craftsmanship, design expertise, and integrity to every outdoor project. Whether you need a lush new lawn, custom patio, or complete landscape transformation, we’re committed to delivering long-lasting quality and exceptional service.</p>
+      <a href="#services">Explore Our Services</a>
+    </div>
+    <img src="images/about-photo.jpg" alt="TruStone Outdoors Project Example">
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services-section">
+    <div class="services-overlay">
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="service"><i class="fa-solid fa-seedling"></i><h3>Sod Installation</h3><p>Fresh, healthy sod installed to transform your lawn instantly.</p></div>
+        <div class="service"><i class="fa-solid fa-leaf"></i><h3>Landscape Design & Installation</h3><p>Custom outdoor spaces designed for beauty and functionality.</p></div>
+        <div class="service"><i class="fa-solid fa-droplet"></i><h3>Irrigation Systems</h3><p>Efficient watering solutions to keep your yard thriving.</p></div>
+        <div class="service"><i class="fa-solid fa-tree"></i><h3>Tree Services</h3><p>Tree trimming, removal, and maintenance from certified experts.</p></div>
+        <div class="service"><i class="fa-solid fa-grip-lines"></i><h3>Artificial Turf</h3><p>Low-maintenance, durable turf for lawns, patios, and play areas.</p></div>
+        <div class="service"><i class="fa-solid fa-mountain"></i><h3>Hardscaping</h3><p>Beautiful patios, walkways, and retaining walls built to last.</p></div>
+      </div>
+      <div class="services-cta"><a href="#contact" class="cta-button" id="estimate-btn">Get Estimate »</a></div>
+    </div>
+  </section>
+
+  <!-- BEFORE & AFTER TRANSFORMATION SECTION -->
+  <section class="transformation-section fade-up">
+    <div class="transformation-container">
+      <!-- Before/After Image Comparison -->
+      <div class="before-after-gallery">
+        <div class="image-box">
+          <img src="images/sod-before.jpg" alt="Before lawn">
+          <span class="label before-label">Before</span>
+        </div>
+        <div class="image-box">
+          <img src="images/sod-after.jpg" alt="After lawn">
+          <span class="label after-label">After</span>
+        </div>
+      </div>
+
+      <!-- Text Content -->
+      <div class="transformation-text">
+        <h2>See the TruStone Difference</h2>
+        <p>From dry patches to lush green perfection — we bring life back to your landscape. Compare the transformation for yourself.</p>
+        <ul>
+          <li>🌿 Sod installation and lawn renovation</li>
+          <li>🌱 Landscape design and installation</li>
+          <li>💧 Irrigation setup and repair</li>
+          <li>🌳 Tree trimming and removal</li>
+        </ul>
+        <a href="#contact" class="cta-button">Get a Free Estimate »</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Randy Millican</strong><br>
+    Phone: <a href="tel:2105049939">210-504-9939</a><br>
+    Email: <a href="mailto:info@trustoneoutdoors.com">info@trustoneoutdoors.com</a></p>
+  </section>
+
+  <footer><p>© 2025 TruStone Outdoors. All rights reserved.</p></footer>
+</body>
+</html>
