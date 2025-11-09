@@ -96,37 +96,42 @@
   position: relative;
   width: 100%;
   max-width: 500px;
+  aspect-ratio: 16 / 9; /* keeps a fixed proportion */
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  background: #000; /* avoids gray gaps while loading */
 }
-
-/* Base "After" image (full width) */
-.after-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
-/* Top "Before" image (revealed by slider) */
+/* Both image containers fill the same space */
+.after-image,
 .before-image {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%; /* start half visible */
+  width: 100%;
   height: 100%;
+}
+
+/* Make both images fill perfectly */
+.after-image img,
+.before-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* prevents stretching */
+  display: block;
+}
+
+/* Top "Before" image (revealed by slider) */
+.before-image {
+  width: 50%; /* start half visible */
   overflow: hidden;
   z-index: 2;
   transition: width 0.25s ease-out;
 }
 
-.before-image img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-}
 
 /* Slider styling */
 .slider {
@@ -352,6 +357,7 @@
   
 </body>
 </html>
+
 
 
 
