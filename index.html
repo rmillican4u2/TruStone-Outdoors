@@ -180,6 +180,22 @@
 .before-after-container .after-label {
   right: 15px;
 }
+
+/* Fix for collapsed Before/After images */
+.before-after-container,
+.before-image,
+.after-image {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.before-after-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
     
 /* Text block */
 .transformation-text {
@@ -365,4 +381,5 @@
   
 </body>
 </html>
+
 
