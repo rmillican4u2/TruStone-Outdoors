@@ -322,13 +322,13 @@
   <div class="transformation-container">
     
     <!-- Left: Before/After Image Slider -->
-    <div class="before-after-container">
-      <div class="before-image">
-        <img src="images/sod-before.jpg" alt="Before lawn">
-      </div>
-      <div class="after-image">
-        <img src="images/sod-after.jpg" alt="After lawn">
-      </div>
+   <div class="after-image">
+  <img src="images/sod-after.jpg" alt="After lawn">
+</div>
+<div class="before-image">
+  <img src="images/sod-before.jpg" alt="Before lawn">
+</div>
+
 
 <!-- Add these labels -->
   <span class="label before-label">Before</span>
@@ -362,24 +362,20 @@
 
   <footer><p>© 2025 TruStone Outdoors. All rights reserved.</p></footer>
 
-  <script>
-    const slider = document.getElementById('singleImageSlider');
-    const overlay = document.getElementById('beforeOverlay');
-    slider.addEventListener('input', e => {
-      overlay.style.width = `${e.target.value}%`;
-    });
-  </script>
-
+  
 
 <script>
   const slider = document.getElementById('beforeAfterSlider');
-  const beforeImage = document.querySelector('.before-image img');
-  slider.addEventListener('input', e => {
-    beforeImage.style.clipPath = `inset(0 ${100 - e.target.value}% 0 0)`;
+  const beforeImage = document.querySelector('.before-image');
+
+  slider.addEventListener('input', () => {
+    beforeImage.style.width = `${slider.value}%`;
   });
 </script>
+
   
 </body>
 </html>
+
 
 
