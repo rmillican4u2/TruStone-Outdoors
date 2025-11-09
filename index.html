@@ -54,17 +54,53 @@
     .service:hover{transform:translateY(-5px);background:rgba(255,255,255,.2);}
 
     /* Restored green icon color + hover fade */
-    .service i {
-      font-size: 2rem;
-      color: #4caf50;
-      margin-bottom: 12px;
-      transition: color 0.6s ease, transform 0.4s ease, text-shadow 0.4s ease;
-    }
-    .service:hover i {
-  color: #a8ff8f; /* brighter fade color */
-  transform: scale(1.15);
-  text-shadow: 0 0 10px rgba(76, 175, 80, 0.5); /* subtle glow */
+   /* 🌿 Multi-colored Service Icons with Smooth Glow Effects */
+.service i {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  transition: color 0.6s ease, transform 0.4s ease, text-shadow 0.4s ease;
 }
+
+/* Default colors per service type */
+.service:nth-child(1) i { color: #4caf50; } /* Sod – Green */
+.service:nth-child(2) i { color: #81c784; } /* Landscape Design – Soft Green */
+.service:nth-child(3) i { color: #03a9f4; } /* Irrigation – Sky Blue */
+.service:nth-child(4) i { color: #8bc34a; } /* Tree Services – Leafy Green */
+.service:nth-child(5) i { color: #cddc39; } /* Turf – Bright Lime */
+.service:nth-child(6) i { color: #ff9800; } /* Hardscaping – Earthy Orange */
+
+/* Hover effects per icon */
+.service:nth-child(1):hover i {
+  color: #b2ff9e;
+  transform: scale(1.15);
+  text-shadow: 0 0 15px rgba(76, 175, 80, 0.6);
+}
+.service:nth-child(2):hover i {
+  color: #d2ffd1;
+  transform: scale(1.15);
+  text-shadow: 0 0 15px rgba(129, 199, 132, 0.6);
+}
+.service:nth-child(3):hover i {
+  color: #6ddcff;
+  transform: scale(1.15);
+  text-shadow: 0 0 18px rgba(3, 169, 244, 0.6);
+}
+.service:nth-child(4):hover i {
+  color: #d2ffb3;
+  transform: scale(1.15);
+  text-shadow: 0 0 15px rgba(139, 195, 74, 0.6);
+}
+.service:nth-child(5):hover i {
+  color: #f4ff9f;
+  transform: scale(1.15);
+  text-shadow: 0 0 15px rgba(205, 220, 57, 0.6);
+}
+.service:nth-child(6):hover i {
+  color: #ffd580;
+  transform: scale(1.15);
+  text-shadow: 0 0 15px rgba(255, 152, 0, 0.6);
+}
+
 
     .services-cta{text-align:center;margin-top:60px;}
     .services-cta .cta-button{background:#4caf50;color:#fff;padding:15px 35px;font-size:1.1rem;border-radius:6px;text-decoration:none;font-weight:600;}
@@ -286,4 +322,5 @@
   <footer><p>© 2025 TruStone Outdoors. All rights reserved.</p></footer>
 </body>
 </html>
+
 
