@@ -1,405 +1,342 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TruStone Outdoors | Landscape & Hardscape Experts</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
-    body{background:#f8f8f8;color:#333;}
-	  /* Add this anywhere inside the <style> block */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-	  /* Default style for icons */
-.service-icon {
-  font-size: 40px;
-  color: #4caf50;
-  margin-bottom: 15px;
-  opacity: 0;
-  transform: translateY(20px) scale(0.95);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out, 
-              color 0.4s ease, text-shadow 0.4s ease, filter 0.4s ease;
-}
-/* When icon becomes visible on scroll */
-.service-icon.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* Performance hint for smoother animations */
-.fade-up,
-.service-icon {
-  will-change: transform, opacity;
-}
-
-
-
-/* Smooth fade-in for glow */
-.service-icon {
-  transition: color 0.4s ease, text-shadow 0.4s ease, transform 0.4s ease, filter 0.4s ease;
-}	  
-	  /* Subtle pulse glow on hover */
-@keyframes pulseGlow {
-  0%, 100% {
-    transform: scale(1);
-    filter: brightness(1);
-  }
-  50% {
-    transform: scale(1.08);
-    filter: brightness(1.25);
-  }
-}
-
-
-/* Default pulse animation trigger */
-.service:hover .service-icon {
-  animation: pulseGlow 1.6s ease-in-out infinite;
-}
-
-/* Match pulse color to each service’s unique glow */
-.service:nth-child(1):hover .service-icon {
-  color: #76ff03;
-  text-shadow: 0 0 12px rgba(118, 255, 3, 0.6);
-}
-
-.service:nth-child(2):hover .service-icon {
-  color: #40c4ff;
-  text-shadow: 0 0 12px rgba(64, 196, 255, 0.6);
-}
-
-.service:nth-child(3):hover .service-icon {
-  color: #00e676;
-  text-shadow: 0 0 12px rgba(0, 230, 118, 0.6);
-}
-
-.service:nth-child(4):hover .service-icon {
-  color: #ffeb3b;
-  text-shadow: 0 0 12px rgba(255, 235, 59, 0.6);
-}
-
-.service:nth-child(5):hover .service-icon {
-  color: #8bc34a;
-  text-shadow: 0 0 12px rgba(139, 195, 74, 0.6);
-}
-
-.service:nth-child(6):hover .service-icon {
-  color: #ff9800;
-  text-shadow: 0 0 12px rgba(255, 152, 0, 0.6);
-}
-
-	  
-@media (hover: none) {
-  .service:hover .service-icon {
-    transform: none;
-    text-shadow: none;
-  }
-}
+    body {
+      background: #f8f8f8;
+      color: #333;
+    }
 
     /* NAV */
-    nav{background:#222;color:#fff;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;}
-    nav ul{list-style:none;display:flex;gap:20px;}
-    nav a{color:#fff;text-decoration:none;transition:color .3s;}
-    nav a:hover{color:#4caf50;}
+    nav {
+      background: #222;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #4caf50;
+    }
 
     /* HERO */
-    .hero-video-container{position:relative;width:100%;height:90vh;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;}
-    .hero-video-container video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;}
-    .mobile-hero{display:none;width:100%;height:90vh;object-fit:cover;}
-    .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.45);z-index:1;}
-    .hero-content{position:relative;z-index:2;max-width:800px;padding:0 20px;}
-    .hero-content h1{font-size:3rem;letter-spacing:2px;}
-    .hero-content p{font-size:1.3rem;margin:20px 0;}
-    .hero-content a{background:#4caf50;color:#fff;padding:12px 25px;text-decoration:none;border-radius:5px;transition:background .3s;}
-    .hero-content a:hover{background:#3e8e41;}
+    .hero-video-container {
+      position: relative;
+      width: 100%;
+      height: 90vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero-video-container video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .mobile-hero {
+      display: none;
+      width: 100%;
+      height: 90vh;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.45);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    .hero-content p {
+      font-size: 1.3rem;
+      margin: 20px 0;
+    }
+
+    .hero-content a {
+      background: #4caf50;
+      color: #fff;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .hero-content a:hover {
+      background: #3e8e41;
+    }
 
     /* ABOUT */
-    .about-section{background:#fff;color:#333;padding:80px 10%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:40px;}
-    .about-section img{width:100%;max-width:500px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.1);}
-    .about-text{flex:1;min-width:300px;}
-    .about-text h2{font-size:2.3rem;margin-bottom:20px;color:#222;}
-    .about-text p{font-size:1.1rem;line-height:1.6;margin-bottom:20px;}
-    .about-text a{background:#4caf50;color:#fff;padding:10px 22px;text-decoration:none;border-radius:5px;transition:background .3s;}
-    .about-text a:hover{background:#3e8e41;}
+    .about-section {
+      background: #fff;
+      color: #333;
+      padding: 80px 10%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
 
+    .about-section img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
 
-/* CALL TO ACTION / TRUST SECTION */
-.cta-section {
-  background: #fff;
-  text-align: center;
-  padding: 80px 10%;
-}
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
 
-.cta-text h2 {
-  font-size: 2rem;
-  color: #2c3e50;
-  margin-bottom: 15px;
-}
+    .about-text h2 {
+      font-size: 2.3rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
 
-.cta-text p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #555;
-  max-width: 800px;
-  margin: 0 auto 50px;
-}
-/*  just a comment   */
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
 
-/* Green Banner CTA with real turf background */
-.cta-banner {
-  position: relative;
-  background: url('images/grass-texture.jpg') center/cover no-repeat;
-  color: white;
-  border-radius: 10px;
-  padding: 60px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 60px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-}
+    .about-text a {
+      background: #4caf50;
+      color: #fff;
+      padding: 10px 22px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
 
-/* Dark fade overlay to make text stand out */
-.cta-banner::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 70%);
-  z-index: 0;
-}
-
-.cta-banner h3,
-.cta-banner .cta-button {
-  position: relative;
-  z-index: 1;
-}
-
-.cta-banner h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  flex: 1;
-  text-align: left;
-}
-
-.cta-button {
-  background: #111;
-  color: #fff;
-  padding: 15px 25px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.cta-button:hover {
-  background: #333;
-}
-
-/* Responsive tweak */
-@media (max-width:768px) {
-  .cta-banner {
-    flex-direction: column;
-    text-align: center;
-    padding: 50px 20px;
-  }
-  .cta-banner h3 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-}
-
-
-/* Companies Served */
-.companies h2 {
-  font-size: 1.8rem;
-  margin-bottom: 30px;
-  color: #2c3e50;
-}
-.logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  flex-wrap: wrap;
-}
-.logo-item img {
-  height: 100px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.2));
-  transition: transform 0.3s;
-}
-.logo-item img:hover {
-  transform: scale(1.05);
-}
-
-
-/* Horizontal Scrolling Logos (Marquee Effect) */
-.logo-marquee {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  margin: 30px auto 0;
-  max-width: 800px;
-}
-
-.logo-track {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  animation: scroll-logos 20s linear infinite;
-}
-
-.logo-track img {
-  height: 80px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.2));
-  transition: transform 0.3s;
-}
-
-
-/* Logo Slider – one company visible at a time */
-.logo-slider {
-  position: relative;
-  width: 250px;
-  height: 120px;
-  margin: 30px auto 0;
-  overflow: hidden;
-}
-
-.logo-slider img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  opacity: 0;
-  animation: fadeSlide 8s infinite;
-  transition: opacity 1s ease;
-}
-
-/* Delay each logo to appear one after another */
-.logo-slider img:nth-child(1) {
-  animation-delay: 0s;
-}
-.logo-slider img:nth-child(2) {
-  animation-delay: 4s;
-}
-/* add more delays for more logos (4s apart if 8s total cycle) */
-
-@keyframes fadeSlide {
-  0% { opacity: 0; transform: translateY(15px); }
-  10%, 40% { opacity: 1; transform: translateY(0); }
-  50%, 100% { opacity: 0; transform: translateY(-15px); }
-}
-
-
-
-
-/* Keyframes for the scroll effect */
-@keyframes scroll-logos {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Optional: pause on hover */
-.logo-marquee:hover .logo-track {
-  animation-play-state: paused;
-}
-
-
-
-/* Mobile */
-@media (max-width:768px) {
-  .cta-banner { flex-direction: column; text-align: center; }
-  .cta-banner h3 { text-align: center; }
-}
-
-/* Fade-in / Slide-up Animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Start hidden */
-.fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-/* When visible, animate */
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-  animation: fadeUp 1.3s ease-out forwards;
-}
-
+    .about-text a:hover {
+      background: #3e8e41;
+    }
 
     /* SERVICES */
-    .services-section{position:relative;background:url('images/trustone-hardscape.jpg') center/cover no-repeat;color:#fff;padding:80px 10%;}
-    .services-section::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.35);z-index:1;}
-    .services-overlay{position:relative;z-index:2;}
-    .services-section h2{font-size:2.2rem;margin-bottom:30px;color:#fff;}
-    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
-    .service{background:rgba(255,255,255,.1);backdrop-filter:blur(6px);color:#fff;padding:25px;border-radius:10px;transition:transform .3s;}
-    .service:hover{transform:translateY(-5px);background:rgba(255,255,255,.2);}
-    .service img{width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:15px;}
+    .services-section {
+      position: relative;
+      background: url('images/trustone-hardscape.jpg') center/cover no-repeat;
+      color: #fff;
+      padding: 80px 10%;
+    }
 
+    .services-section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.35);
+      z-index: 1;
+    }
 
-/* Services CTA Button */
-.services-cta {
-  text-align: center;
-  margin-top: 60px;
-}
+    .services-overlay {
+      position: relative;
+      z-index: 2;
+    }
 
-.services-cta .cta-button {
-  background: #4caf50;
-  color: #fff;
-  padding: 15px 35px;
-  font-size: 1.1rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s, transform 0.2s;
-}
+    .services-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: #fff;
+    }
 
-.services-cta .cta-button:hover {
-  background: #3e8e41;
-  transform: translateY(-3px);
-}
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
 
+    .service {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
 
+    .service:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* ICON ANIMATIONS */
+    .service-icon {
+      font-size: 40px;
+      color: #4caf50;
+      margin-bottom: 15px;
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .service-icon.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); filter: brightness(1); }
+      50% { transform: scale(1.08); filter: brightness(1.25); }
+    }
+
+    .service:hover .service-icon {
+      animation: pulseGlow 1.6s ease-in-out infinite;
+    }
+
+    /* SERVICES CTA BUTTON */
+    .services-cta {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .services-cta .cta-button {
+      background: #4caf50;
+      color: #fff;
+      padding: 15px 35px;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .services-cta .cta-button:hover {
+      background: #3e8e41;
+      transform: translateY(-3px);
+    }
+
+    /* BEFORE & AFTER TRANSFORMATION SECTION */
+    .transformation-section {
+      background: #fff;
+      padding: 80px 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .transformation-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: 1100px;
+    }
+
+    .transformation-image {
+      position: relative;
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .transformation-image img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    .caption-box {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: #7ec850;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      line-height: 1.4;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .transformation-text {
+      flex: 1;
+      min-width: 320px;
+      color: #333;
+    }
+
+    .transformation-text h2 {
+      font-size: 1.9rem;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .transformation-text p {
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .transformation-text ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .transformation-text li {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
 
     /* CONTACT + FOOTER */
-    section{text-align:center;padding:60px 10%;}
-    footer{background:#111;color:#bbb;padding:40px 10%;text-align:center;}
-    footer a{color:#4caf50;text-decoration:none;}
+    section { text-align: center; padding: 60px 10%; }
+    footer { background: #111; color: #bbb; padding: 40px 10%; text-align: center; }
+    footer a { color: #4caf50; text-decoration: none; }
 
     /* MOBILE */
-    @media(max-width:768px){
-      .hero-video-container video{display:none;}
-      .mobile-hero{display:block;}
-      .hero-content h1{font-size:2.2rem;}
-      .hero-content p{font-size:1.1rem;}
-      .about-section{flex-direction:column;text-align:center;}
-      .services-section{background:url('images/trustone-hardscape.jpg') center/cover no-repeat;padding:60px 5%;}
+    @media (max-width:768px) {
+      .hero-video-container video { display: none; }
+      .mobile-hero { display: block; }
+      .hero-content h1 { font-size: 2.2rem; }
+      .hero-content p { font-size: 1.1rem; }
+      .about-section { flex-direction: column; text-align: center; }
+      .transformation-container { flex-direction: column; text-align: center; }
+      .transformation-text { margin-top: 25px; }
     }
   </style>
 </head>
@@ -429,7 +366,7 @@
     </div>
   </div>
 
-  <!-- ABOUT US -->
+  <!-- ABOUT -->
   <section id="about" class="about-section">
     <div class="about-text">
       <h2>About TruStone Outdoors</h2>
@@ -440,82 +377,46 @@
     <img src="images/about-photo.jpg" alt="TruStone Outdoors Project Example">
   </section>
 
-<!-- CALL TO ACTION / TRUST SECTION -->
-<section class="cta-section fade-up">
-  <div class="cta-text">
-    <h2>Transform Your Yard — Transform Your Life</h2>
-    <p>Tired of spending weekends mowing, watering, and repairing your lawn instead of enjoying it? 
-    At TruStone Outdoors, we turn stressful maintenance into relaxing beauty. 
-    Let us design, build, and care for an outdoor space you’ll love coming home to.</p>
-  </div>
-
-  <div class="cta-banner">
-    <h3>Let's Bring Nature Back to Your Home</h3>
-    <a href="#contact" class="cta-button">Get a Quote »</a>
-  </div>
-
- 
-<div class="companies fade-up">
-  <h2>Companies Served</h2>
-
-  <div class="logo-slider">
-    <img src="images/vfw-logo.jpg" alt="VFW Project" class="active">
-    <img src="images/amg-logo.png" alt="AMG Association Management">
-  </div>
-</div>
-</section>   <!-- ✅ Add this closing tag before the services section -->
-
-
-
   <!-- SERVICES -->
   <section id="services" class="services-section">
     <div class="services-overlay">
       <h2>Our Services</h2>
       <div class="services">
-        <div class="service">
-  <i class="fa-solid fa-seedling service-icon"></i>
-  <h3>Sod Installation</h3>
-  <p>Fresh, healthy sod installed to transform your lawn instantly.</p>
-</div>
-
-        <!-- Landscape Design -->
-  <div class="service">
-    <i class="fa-solid fa-leaf service-icon"></i>
-    <h3>Landscape Design & Installation</h3>
-    <p>Custom outdoor spaces designed for beauty and functionality.</p>
-  </div>
-       <!-- Irrigation Systems -->
-  <div class="service">
-    <i class="fa-solid fa-droplet service-icon"></i>
-    <h3>Irrigation Systems</h3>
-    <p>Efficient watering solutions to keep your yard thriving.</p>
-  </div>
-       <!-- Tree Services -->
-  <div class="service">
-    <i class="fa-solid fa-tree service-icon"></i>
-    <h3>Tree Services</h3>
-    <p>Tree trimming, removal, and maintenance from certified experts.</p>
-  </div>
-       <!-- Artificial Turf -->
-  <div class="service">
-    <i class="fa-solid fa-grip-lines service-icon"></i>
-    <h3>Artificial Turf</h3>
-    <p>Low-maintenance, durable turf for lawns, patios, and play areas.</p>
-  </div>
-        <!-- Hardscaping -->
-  <div class="service">
-    <i class="fa-solid fa-mountain service-icon"></i>
-    <h3>Hardscaping</h3>
-    <p>Beautiful patios, walkways, and retaining walls built to last.</p>
-  </div>
+        <div class="service"><i class="fa-solid fa-seedling service-icon"></i><h3>Sod Installation</h3><p>Fresh, healthy sod installed to transform your lawn instantly.</p></div>
+        <div class="service"><i class="fa-solid fa-leaf service-icon"></i><h3>Landscape Design & Installation</h3><p>Custom outdoor spaces designed for beauty and functionality.</p></div>
+        <div class="service"><i class="fa-solid fa-droplet service-icon"></i><h3>Irrigation Systems</h3><p>Efficient watering solutions to keep your yard thriving.</p></div>
+        <div class="service"><i class="fa-solid fa-tree service-icon"></i><h3>Tree Services</h3><p>Tree trimming, removal, and maintenance from certified experts.</p></div>
+        <div class="service"><i class="fa-solid fa-grip-lines service-icon"></i><h3>Artificial Turf</h3><p>Low-maintenance, durable turf for lawns, patios, and play areas.</p></div>
+        <div class="service"><i class="fa-solid fa-mountain service-icon"></i><h3>Hardscaping</h3><p>Beautiful patios, walkways, and retaining walls built to last.</p></div>
       </div>
 
-	<div class="services-cta fade-up">
-  <a href="#contact" class="cta-button" id="estimate-btn">Get Estimate »</a>
-</div>
+      <div class="services-cta fade-up">
+        <a href="#contact" class="cta-button" id="estimate-btn">Get Estimate »</a>
+      </div>
+    </div>
+  </section>
 
-
-
+  <!-- BEFORE & AFTER TRANSFORMATION SECTION -->
+  <section class="transformation-section fade-up">
+    <div class="transformation-container">
+      <div class="transformation-image">
+        <img src="images/sod-transformation.jpg" alt="Before and after lawn transformation">
+        <div class="caption-box">
+          <p>Let's Make Your<br>Landscape Beautiful And Green!</p>
+        </div>
+      </div>
+      <div class="transformation-text">
+        <h2>Full-Service Landscaping Company in San Antonio, TX</h2>
+        <p>Landscaping goes beyond design and installation. It also involves maintenance,
+           repairs, and upgrades. At TruStone Outdoors, we go beyond just sod installation
+           — we deliver complete, customized solutions to make your property thrive.</p>
+        <ul>
+          <li>🌿 Sod installation and lawn renovation</li>
+          <li>🌱 Landscape design and installation</li>
+          <li>💧 Irrigation system setup and repair</li>
+          <li>🌳 Tree trimming, pruning, and removal</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -533,47 +434,35 @@
     <p>© 2025 TruStone Outdoors. All rights reserved.</p>
   </footer>
 
+  <script>
+    // Detect if visitor is on mobile
+    const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+    const estimateBtn = document.getElementById('estimate-btn');
 
+    if (isMobile && estimateBtn) {
+      estimateBtn.setAttribute('href', 'tel:2105049939');
+    } else if (estimateBtn) {
+      estimateBtn.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
 
-<script>
-  // Detect if the visitor is on a mobile device
-  const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+    // Unified IntersectionObserver
+    const elementsToObserve = document.querySelectorAll('.fade-up, .service-icon');
+    const sharedObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          sharedObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
 
-  const estimateBtn = document.getElementById('estimate-btn');
-
-  if (isMobile && estimateBtn) {
-    // If mobile, change link to dial your number
-    estimateBtn.setAttribute('href', 'tel:2105049939');
-  } else if (estimateBtn) {
-    // If desktop, smooth scroll to the contact section
-    estimateBtn.addEventListener('click', function (event) {
-      event.preventDefault();
-      document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
-    });
-  }
-</script>
-<script>
-  // 🔥 Unified IntersectionObserver for fade-up and icon animations
-  const elementsToObserve = document.querySelectorAll('.fade-up, .service-icon');
-
-  const sharedObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        entry.target.classList.toggle('visible', entry.isIntersecting);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  elementsToObserve.forEach(el => sharedObserver.observe(el));
-</script>
-
-
-
-	
+    elementsToObserve.forEach(el => sharedObserver.observe(el));
+  </script>
 </body>
 </html>
-
 
 
 
