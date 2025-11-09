@@ -4,34 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TruStone Outdoors | Landscape & Hardscape Experts</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
     body{background:#f8f8f8;color:#333;}
-
-    /* ICON ANIMATION */
-    .service-icon {
-      font-size: 40px;
-      color: #4caf50;
-      margin-bottom: 15px;
-      opacity: 0;
-      transform: translateY(20px) scale(0.95);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out, color 0.4s ease, text-shadow 0.4s ease, filter 0.4s ease;
-    }
-    .service-icon.visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-    .fade-up, .service-icon {
-      will-change: transform, opacity;
-    }
-    @keyframes pulseGlow {
-      0%,100% {transform: scale(1);filter: brightness(1);}
-      50% {transform: scale(1.08);filter: brightness(1.25);}
-    }
-    .service:hover .service-icon {
-      animation: pulseGlow 1.6s ease-in-out infinite;
-    }
 
     /* NAV */
     nav{background:#222;color:#fff;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;}
@@ -45,13 +22,13 @@
     .mobile-hero{display:none;width:100%;height:90vh;object-fit:cover;}
     .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.45);z-index:1;}
     .hero-content{position:relative;z-index:2;max-width:800px;padding:0 20px;}
-    .hero-content h1{font-size:3rem;letter-spacing:2px;}
+    .hero-content h1{font-size:3rem;}
     .hero-content p{font-size:1.3rem;margin:20px 0;}
     .hero-content a{background:#4caf50;color:#fff;padding:12px 25px;text-decoration:none;border-radius:5px;transition:background .3s;}
     .hero-content a:hover{background:#3e8e41;}
 
     /* ABOUT */
-    .about-section{background:#fff;color:#333;padding:80px 10%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:40px;}
+    .about-section{background:#fff;padding:80px 10%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:40px;}
     .about-section img{width:100%;max-width:500px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.1);}
     .about-text{flex:1;min-width:300px;}
     .about-text h2{font-size:2.3rem;margin-bottom:20px;color:#222;}
@@ -60,60 +37,40 @@
     .about-text a:hover{background:#3e8e41;}
 
     /* CTA / TRUST */
-    .cta-section {background:#fff;text-align:center;padding:80px 10%;}
-    .cta-text h2{font-size:2rem;color:#2c3e50;margin-bottom:15px;}
-    .cta-text p{font-size:1.1rem;line-height:1.6;color:#555;max-width:800px;margin:0 auto 50px;}
+    .cta-section{background:#fff;text-align:center;padding:80px 10%;}
     .cta-banner{position:relative;background:url('images/grass-texture.jpg') center/cover no-repeat;color:white;border-radius:10px;padding:60px 30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:60px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.25);}
-    .cta-banner::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to top,rgba(0,0,0,0.45) 0%,rgba(0,0,0,0.15) 70%);z-index:0;}
-    .cta-banner h3,.cta-banner .cta-button{position:relative;z-index:1;}
-    .cta-banner h3{font-size:1.8rem;font-weight:600;flex:1;text-align:left;}
-    .cta-button{background:#111;color:#fff;padding:15px 25px;border-radius:5px;text-decoration:none;font-weight:bold;transition:background .3s;}
+    .cta-banner::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to top,rgba(0,0,0,0.45) 0%,rgba(0,0,0,0.15) 70%);}
+    .cta-banner h3{font-size:1.8rem;font-weight:600;flex:1;text-align:left;z-index:1;}
+    .cta-button{background:#111;color:#fff;padding:15px 25px;border-radius:5px;text-decoration:none;font-weight:bold;z-index:1;transition:background .3s;}
     .cta-button:hover{background:#333;}
 
     /* SERVICES */
     .services-section{position:relative;background:url('images/trustone-hardscape.jpg') center/cover no-repeat;color:#fff;padding:80px 10%;}
-    .services-section::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.35);z-index:1;}
+    .services-section::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.35);}
     .services-overlay{position:relative;z-index:2;}
-    .services-section h2{font-size:2.2rem;margin-bottom:30px;color:#fff;}
+    .services-section h2{font-size:2.2rem;margin-bottom:30px;}
     .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
-    .service{background:rgba(255,255,255,.1);backdrop-filter:blur(6px);color:#fff;padding:25px;border-radius:10px;transition:transform .3s;}
+    .service{background:rgba(255,255,255,.1);backdrop-filter:blur(6px);padding:25px;border-radius:10px;transition:transform .3s;}
     .service:hover{transform:translateY(-5px);background:rgba(255,255,255,.2);}
     .services-cta{text-align:center;margin-top:60px;}
-    .services-cta .cta-button{background:#4caf50;color:#fff;padding:15px 35px;font-size:1.1rem;border-radius:6px;text-decoration:none;font-weight:600;transition:background 0.3s,transform 0.2s;}
+    .services-cta .cta-button{background:#4caf50;color:#fff;padding:15px 35px;font-size:1.1rem;border-radius:6px;text-decoration:none;font-weight:600;}
     .services-cta .cta-button:hover{background:#3e8e41;transform:translateY(-3px);}
 
-    /* BEFORE & AFTER INTERACTIVE COMPARISON */
-    .transformation-section {
-      background: #fff;
-      padding: 80px 10%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-    .transformation-container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 50px;
-      max-width: 1100px;
-    }
-    .transformation-visual {flex:1;min-width:320px;display:flex;justify-content:center;}
-    .before-after-container {position:relative;width:100%;max-width:500px;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.15);}
-    .before-after-container img {width:100%;height:auto;display:block;}
-    .after-image {position:absolute;top:0;left:0;width:50%;overflow:hidden;transition:width 0.25s ease-out;}
-    .after-image img {width:100%;}
-    .slider {position:absolute;bottom:10px;left:50%;transform:translateX(-50%);width:80%;cursor:pointer;-webkit-appearance:none;background:rgba(255,255,255,0.4);height:6px;border-radius:5px;outline:none;}
-    .slider::-webkit-slider-thumb {-webkit-appearance:none;width:20px;height:20px;background:#4caf50;border-radius:50%;cursor:pointer;box-shadow:0 0 8px rgba(0,0,0,0.2);}
-    .transformation-text {flex:1;min-width:320px;color:#333;}
-    .transformation-text h2 {font-size:1.9rem;color:#2c3e50;margin-bottom:15px;}
-    .transformation-text p {font-size:1.05rem;margin-bottom:20px;line-height:1.6;}
-    .transformation-text ul {list-style:none;padding:0;}
-    .transformation-text li {font-size:1rem;margin-bottom:8px;}
-    .transformation-text .cta-button {background:#4caf50;color:#fff;padding:12px 25px;border-radius:6px;text-decoration:none;font-weight:600;display:inline-block;margin-top:20px;transition:background 0.3s,transform 0.2s;}
-    .transformation-text .cta-button:hover {background:#3e8e41;transform:translateY(-3px);}
-    @media (max-width:768px){.transformation-container{flex-direction:column;text-align:center;}.slider{bottom:15px;}}
+    /* BEFORE/AFTER - Single Image Effect */
+    .transformation-section{background:#fff;padding:80px 10%;display:flex;justify-content:center;align-items:center;flex-direction:column;}
+    .transformation-container{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:50px;max-width:1100px;}
+    .before-after-single{position:relative;max-width:500px;width:100%;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.15);}
+    .before-after-single img{width:100%;display:block;}
+    .before-overlay{position:absolute;top:0;left:0;width:50%;height:100%;background:rgba(0,0,0,0.5);backdrop-filter:grayscale(80%) brightness(0.7);transition:width 0.25s ease-out;}
+    .slider{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);width:80%;cursor:pointer;-webkit-appearance:none;background:rgba(255,255,255,0.4);height:6px;border-radius:5px;outline:none;}
+    .slider::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;background:#4caf50;border-radius:50%;cursor:pointer;box-shadow:0 0 8px rgba(0,0,0,0.2);}
+    .transformation-text{flex:1;min-width:320px;color:#333;}
+    .transformation-text h2{font-size:1.9rem;color:#2c3e50;margin-bottom:15px;}
+    .transformation-text p{font-size:1.05rem;margin-bottom:20px;line-height:1.6;}
+    .transformation-text ul{list-style:none;padding:0;}
+    .transformation-text li{font-size:1rem;margin-bottom:8px;}
+    .transformation-text .cta-button{background:#4caf50;color:#fff;padding:12px 25px;border-radius:6px;text-decoration:none;font-weight:600;display:inline-block;margin-top:20px;}
+    .transformation-text .cta-button:hover{background:#3e8e41;transform:translateY(-3px);}
 
     /* CONTACT + FOOTER */
     section{text-align:center;padding:60px 10%;}
@@ -125,7 +82,7 @@
       .hero-video-container video{display:none;}
       .mobile-hero{display:block;}
       .about-section{flex-direction:column;text-align:center;}
-      .services-section{padding:60px 5%;}
+      .transformation-container{flex-direction:column;text-align:center;}
     }
   </style>
 </head>
@@ -160,29 +117,9 @@
     <div class="about-text">
       <h2>About TruStone Outdoors</h2>
       <p>At TruStone Outdoors, we bring craftsmanship, design expertise, and integrity to every outdoor project. Whether you need a lush new lawn, custom patio, or complete landscape transformation, we’re committed to delivering long-lasting quality and exceptional service.</p>
-      <p>We’re locally owned, proudly serving Texas homeowners and businesses with trusted landscape, turf, and irrigation solutions that enhance your property’s value and beauty.</p>
       <a href="#services">Explore Our Services</a>
     </div>
     <img src="images/about-photo.jpg" alt="TruStone Outdoors Project Example">
-  </section>
-
-  <!-- CTA / TRUST -->
-  <section class="cta-section fade-up">
-    <div class="cta-text">
-      <h2>Transform Your Yard — Transform Your Life</h2>
-      <p>Tired of spending weekends mowing, watering, and repairing your lawn instead of enjoying it? At TruStone Outdoors, we turn stressful maintenance into relaxing beauty.</p>
-    </div>
-    <div class="cta-banner">
-      <h3>Let's Bring Nature Back to Your Home</h3>
-      <a href="#contact" class="cta-button">Get a Quote »</a>
-    </div>
-    <div class="companies fade-up">
-      <h2>Companies Served</h2>
-      <div class="logo-slider">
-        <img src="images/vfw-logo.jpg" alt="VFW Project" class="active">
-        <img src="images/amg-logo.png" alt="AMG Association Management">
-      </div>
-    </div>
   </section>
 
   <!-- SERVICES -->
@@ -190,29 +127,26 @@
     <div class="services-overlay">
       <h2>Our Services</h2>
       <div class="services">
-        <div class="service"><i class="fa-solid fa-seedling service-icon"></i><h3>Sod Installation</h3><p>Fresh, healthy sod installed to transform your lawn instantly.</p></div>
-        <div class="service"><i class="fa-solid fa-leaf service-icon"></i><h3>Landscape Design & Installation</h3><p>Custom outdoor spaces designed for beauty and functionality.</p></div>
-        <div class="service"><i class="fa-solid fa-droplet service-icon"></i><h3>Irrigation Systems</h3><p>Efficient watering solutions to keep your yard thriving.</p></div>
-        <div class="service"><i class="fa-solid fa-tree service-icon"></i><h3>Tree Services</h3><p>Tree trimming, removal, and maintenance from certified experts.</p></div>
-        <div class="service"><i class="fa-solid fa-grip-lines service-icon"></i><h3>Artificial Turf</h3><p>Low-maintenance, durable turf for lawns, patios, and play areas.</p></div>
-        <div class="service"><i class="fa-solid fa-mountain service-icon"></i><h3>Hardscaping</h3><p>Beautiful patios, walkways, and retaining walls built to last.</p></div>
+        <div class="service"><i class="fa-solid fa-seedling"></i><h3>Sod Installation</h3><p>Fresh, healthy sod installed to transform your lawn instantly.</p></div>
+        <div class="service"><i class="fa-solid fa-leaf"></i><h3>Landscape Design & Installation</h3><p>Custom outdoor spaces designed for beauty and functionality.</p></div>
+        <div class="service"><i class="fa-solid fa-droplet"></i><h3>Irrigation Systems</h3><p>Efficient watering solutions to keep your yard thriving.</p></div>
+        <div class="service"><i class="fa-solid fa-tree"></i><h3>Tree Services</h3><p>Tree trimming, removal, and maintenance from certified experts.</p></div>
+        <div class="service"><i class="fa-solid fa-grip-lines"></i><h3>Artificial Turf</h3><p>Low-maintenance, durable turf for lawns, patios, and play areas.</p></div>
+        <div class="service"><i class="fa-solid fa-mountain"></i><h3>Hardscaping</h3><p>Beautiful patios, walkways, and retaining walls built to last.</p></div>
       </div>
-      <div class="services-cta fade-up">
-        <a href="#contact" class="cta-button" id="estimate-btn">Get Estimate »</a>
-      </div>
+      <div class="services-cta"><a href="#contact" class="cta-button" id="estimate-btn">Get Estimate »</a></div>
     </div>
   </section>
 
-  <!-- BEFORE & AFTER -->
+  <!-- BEFORE/AFTER - SINGLE IMAGE -->
   <section class="transformation-section fade-up">
     <div class="transformation-container">
-      <div class="transformation-visual">
-        <div class="before-after-container">
-          <div class="before-image"><img src="images/sod-before.jpg" alt="Before lawn"></div>
-          <div class="after-image"><img src="images/sod-after.jpg" alt="After lawn"></div>
-          <input type="range" min="0" max="100" value="50" class="slider" id="beforeAfterSlider">
-        </div>
+      <div class="before-after-single">
+        <img src="images/sod-transformation.jpg" alt="Lawn transformation">
+        <div class="before-overlay" id="beforeOverlay"></div>
+        <input type="range" min="0" max="100" value="50" class="slider" id="singleImageSlider">
       </div>
+
       <div class="transformation-text">
         <h2>See the TruStone Difference</h2>
         <p>From dry patches to lush green perfection — we bring life back to your landscape. Slide to see the transformation.</p>
@@ -235,38 +169,12 @@
 
   <footer><p>© 2025 TruStone Outdoors. All rights reserved.</p></footer>
 
-  <!-- SCRIPTS -->
   <script>
-    const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
-    const estimateBtn = document.getElementById('estimate-btn');
-    if (isMobile && estimateBtn) {estimateBtn.setAttribute('href','tel:2105049939');}
-    else if (estimateBtn) {
-      estimateBtn.addEventListener('click',function(e){
-        e.preventDefault();
-        document.querySelector('#contact').scrollIntoView({behavior:'smooth'});
-      });
-    }
-  </script>
-  <script>
-    const elementsToObserve=document.querySelectorAll('.fade-up, .service-icon');
-    const sharedObserver=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-          entry.target.classList.toggle('visible',entry.isIntersecting);
-        }
-      });
-    },{threshold:0.2});
-    elementsToObserve.forEach(el=>sharedObserver.observe(el));
-  </script>
-  <script>
-    const slider=document.getElementById('beforeAfterSlider');
-    const afterImage=document.querySelector('.after-image');
-    slider.addEventListener('input',e=>{afterImage.style.width=`${e.target.value}%`;});
+    const slider = document.getElementById('singleImageSlider');
+    const overlay = document.getElementById('beforeOverlay');
+    slider.addEventListener('input', e => {
+      overlay.style.width = `${e.target.value}%`;
+    });
   </script>
 </body>
 </html>
-
-
-
-
