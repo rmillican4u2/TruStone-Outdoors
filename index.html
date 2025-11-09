@@ -272,6 +272,77 @@
       .about-section{flex-direction:column;text-align:center;}
       .transformation-container{flex-direction:column;text-align:center;}
     }
+
+/* === ABOUT CTA BANNER === */
+.about-cta-banner {
+  position: relative;
+  background: linear-gradient(135deg, #3f8d2a 0%, #6bbd4a 100%);
+  background-image: url('images/grass-texture.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 60px 10%;
+  border-radius: 12px;
+  margin: 60px auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  overflow: hidden;
+}
+
+.about-cta-banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+.about-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-cta-banner h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.about-cta-button {
+  background: #111;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+}
+
+.about-cta-button:hover {
+  background: #4caf50;
+  transform: translateY(-3px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .about-cta-banner h3 {
+    font-size: 1.6rem;
+  }
+  .about-cta-button {
+    padding: 12px 22px;
+  }
+}
+
+    
   </style>
 </head>
 
@@ -310,6 +381,14 @@
     <img src="images/about-photo.jpg" alt="TruStone Outdoors Project Example">
   </section>
 
+<!-- ABOUT CALL-TO-ACTION BANNER -->
+<section class="about-cta-banner">
+  <div class="about-cta-content">
+    <h3>Let’s Bring Nature Back to Your Lawn</h3>
+    <a href="#contact" class="about-cta-button">Get a Free Quote »</a>
+  </div>
+</section>
+  
   <!-- SERVICES -->
   <section id="services" class="services-section">
     <div class="services-overlay">
@@ -386,6 +465,7 @@
   
 </body>
 </html>
+
 
 
 
