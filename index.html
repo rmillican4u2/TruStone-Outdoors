@@ -234,7 +234,7 @@
       }
     }
 
-/* COMPANIES SERVED */
+/* COMPANIES SERVED (Animated Fade) */
 .companies-section {
   background: #f5f5f5;
   text-align: center;
@@ -244,31 +244,55 @@
 .companies-section h2 {
   font-size: 2rem;
   color: #2c3e50;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.company-slider {
   position: relative;
+  width: 200px;
+  height: 120px;
+  margin: 0 auto;
 }
 
-.companies-logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
+.company-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
 }
 
-.companies-logos img {
-  max-width: 160px;
-  height: auto;
-  opacity: 0.7;
-  filter: grayscale(100%);
-  transition: all 0.6s ease;
-}
-
-.companies-logos img:hover {
+/* First logo visible by default */
+.company-slider img.active {
   opacity: 1;
-  filter: grayscale(0) drop-shadow(0 0 10px rgba(76, 175, 80, 0.4));
-  transform: scale(1.05);
 }
+
+/* Fade animation sequence */
+@keyframes fadeLogos {
+  0%, 45% { opacity: 1; }
+  55%, 100% { opacity: 0; }
+}
+
+/* Animate both logos alternately */
+.company-slider img:nth-child(1) {
+  animation: fadeLogos 6s infinite;
+}
+.company-slider img:nth-child(2) {
+  animation: fadeLogos 6s infinite 3s; /* start halfway through */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .company-slider {
+    width: 150px;
+    height: 100px;
+  }
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -374,16 +398,15 @@
     </div>
   </section>
 
-<!-- COMPANIES SERVED -->
+<!-- COMPANIES SERVED (Animated) -->
 <section class="companies-section">
   <h2>Companies We Proudly Serve</h2>
-  <div class="companies-logos">
-    <img src="images/amg-logo.png" alt="AMG" />
-    <img src="images/vfw-logo.jpg" alt="VFW" />
-    <img src="images/hooper.jpg.jpeg" alt="Hooper" />
-    <img src="images/trustone-hardscape.jpg" alt="TruStone Hardscape" />
+  <div class="company-slider">
+    <img src="images/amg-logo.png" alt="AMG Logo" class="active">
+    <img src="images/vfw-logo.jpg" alt="VFW Logo">
   </div>
 </section>
+
 
   
   <!-- CONTACT -->
@@ -397,6 +420,7 @@
   <footer><p>© 2025 TruStone Outdoors. All rights reserved.</p></footer>
 </body>
 </html>
+
 
 
 
